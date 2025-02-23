@@ -11,12 +11,20 @@ def generate_prime_factors(value):
         raise ValueError("value must be an integer")
 
     factors = []
+    factor = 2
+
     if value < 2:
         factors = []
-    else:
+    elif value < 4:
         factors.append(value)
+    else:
+        while value != 1:
+            if value % factor == 0:
+                factors.append(factor)
+                value = value / factor
+            else:
+                factor += 1
     return factors
-
 
 
 ### TESTS ###
@@ -32,3 +40,8 @@ def test_called_2_expect_list_2():
 
 def test_called_3_expect_list_3():
     assert generate_prime_factors(3) == [3]
+
+def test_called_4_expect_list_2_2():
+    assert generate_prime_factors(4) == [2, 2]
+
+
