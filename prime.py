@@ -18,7 +18,7 @@ def generate_prime_factors(value):
     elif value < 4:
         factors.append(value)
     else:
-        while value != 1 and value < 9:
+        while value != 1:
             if value % factor == 0:
                 factors.append(factor)
                 value = value / factor
@@ -49,3 +49,6 @@ def test_called_6_expect_list_3_2():
 
 def test_called_8_expect_list_2_2_2():
     assert generate_prime_factors(8) == [2, 2, 2]
+
+def test_called_9_expect_list_3_3():
+    assert generate_prime_factors(9) == [3, 3]
