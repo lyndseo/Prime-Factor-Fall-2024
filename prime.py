@@ -17,6 +17,8 @@ def generate_prime_factors(value):
         factors.append(value)
     return factors
 
+
+
 ### TESTS ###
 def test_data_type_not_int():
     with pytest.raises(ValueError):
@@ -27,3 +29,6 @@ def test_called_1_expect_empty_list():
 
 def test_called_2_expect_list_2():
     assert generate_prime_factors(2) == [2]
+
+def test_called_3_expect_list_3():
+    assert generate_prime_factors(3) == [3]
